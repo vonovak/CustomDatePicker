@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-package com.customdatepicker.modules.datepicker;
+package com.customdatepicker.modules.datePicker;
 
 import android.app.DatePickerDialog;
 import android.content.Context;

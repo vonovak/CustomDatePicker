@@ -1,6 +1,7 @@
 package com.customdatepicker.modules;
 
-import com.customdatepicker.modules.datepicker.DatePickerDialogModule;
+import com.customdatepicker.modules.datePicker.DatePickerDialogModule;
+import com.customdatepicker.modules.timePicker.TimePickerDialogModule;
 import com.facebook.react.LazyReactPackage;
 import com.facebook.react.bridge.ModuleSpec;
 import com.facebook.react.bridge.NativeModule;
@@ -19,12 +20,19 @@ import javax.inject.Provider;
 public class CustomReactPackage extends LazyReactPackage {
     @Override
     public List<ModuleSpec> getNativeModules(final ReactApplicationContext reactContext) {
-        return Arrays.asList(new ModuleSpec(DatePickerDialogModule.class, new Provider<NativeModule>() {
+        ModuleSpec datePickerDialogModule = new ModuleSpec(DatePickerDialogModule.class, new Provider<NativeModule>() {
             @Override
             public NativeModule get() {
                 return new DatePickerDialogModule(reactContext);
             }
-        }));
+        });
+        ModuleSpec timePickerDialogModule = new ModuleSpec(TimePickerDialogModule.class, new Provider<NativeModule>() {
+            @Override
+            public NativeModule get() {
+                return new TimePickerDialogModule(reactContext);
+            }
+        });
+        return Arrays.asList(datePickerDialogModule, timePickerDialogModule);
     }
 
     @Override

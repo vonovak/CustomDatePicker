@@ -7,7 +7,7 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-package com.customdatepicker.modules.datepicker;
+package com.customdatepicker.modules.datePicker;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -23,11 +23,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.customdatepicker.OnClearClickedListener;
+
 import java.util.Calendar;
 import java.util.Locale;
 
 import javax.annotation.Nullable;
-
 
 @SuppressLint("ValidFragment")
 public class DatePickerDialogFragment extends DialogFragment {
@@ -41,6 +42,8 @@ public class DatePickerDialogFragment extends DialogFragment {
     private OnDateSetListener mOnDateSetListener;
     @Nullable
     private OnDismissListener mOnDismissListener;
+    @Nullable
+    private OnClearClickedListener mOnClearClickedListener;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -49,7 +52,7 @@ public class DatePickerDialogFragment extends DialogFragment {
     }
 
     /*package*/
-    static Dialog createDialog(Bundle args, Context activityContext,
+    Dialog createDialog(Bundle args, final Context activityContext,
                                @Nullable OnDateSetListener onDateSetListener) {
         final Calendar c = Calendar.getInstance();
         if (args != null && args.containsKey(DatePickerDialogModule.ARG_DATE)) {
@@ -105,17 +108,19 @@ public class DatePickerDialogFragment extends DialogFragment {
 
         dialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
-            public void onShow(DialogInterface dialog) {
-                Button button = ((DismissableDatePickerDialog) dialog).getButton(DialogInterface.BUTTON_NEUTRAL);
+            public void onShow(final DialogInterface dialog) {
+                final Button button = ((DismissableDatePickerDialog) dialog).getButton(DialogInterface.BUTTON_NEUTRAL);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        datePicker.updateDate(year, month, day);
+                        if (mOnClearClickedListener != null) {
+                            mOnClearClickedListener.onClearClicked(dialog);
+                        }
+                        dialog.dismiss();
                     }
                 });
             }
         });
-
 
         if (args != null && args.containsKey(DatePickerDialogModule.ARG_MINDATE)) {
             // Set minDate to the beginning of the day. We need this because of clowniness in datepicker
@@ -144,6 +149,11 @@ public class DatePickerDialogFragment extends DialogFragment {
 
         return dialog;
     }
+
+    /*package*/ void setOnClearClickedListener(@Nullable OnClearClickedListener onClearClickedListener) {
+        mOnClearClickedListener = onClearClickedListener;
+    }
+
 
     @Override
     public void onDismiss(DialogInterface dialog) {

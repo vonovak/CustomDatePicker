@@ -15,7 +15,7 @@
  */
 'use strict';
 
-const DatePickerModule = require('react-native').NativeModules.MyDatePickerAndroid;
+const DatePickerModule = require('react-native').NativeModules.ClearableDatePickerAndroid;
 
 /**
  * Convert a Date to a timestamp.
@@ -92,6 +92,13 @@ class DatePickerAndroid {
      */
     static get dismissedAction() {
         return 'dismissedAction';
+    }
+
+    /**
+     * "Clear" has been pressed.
+     */
+    static get clearedAction() {
+        return 'clearedAction';
     }
 }
 

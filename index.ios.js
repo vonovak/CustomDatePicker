@@ -11,20 +11,14 @@ import {
   Text,
   View
 } from 'react-native';
+import ClearableDateTimePicker from './index.android';
 
-export default class CustomDatePicker extends Component {
+export default class ClearableDateTimePicker extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          iOS version is not implemented
         </Text>
       </View>
     );
@@ -50,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('CustomDatePicker', () => CustomDatePicker);
+AppRegistry.registerComponent('ClearableDateTimePicker', () => ClearableDateTimePicker);

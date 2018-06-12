@@ -7,22 +7,41 @@
 import React, {Component} from "react";
 import {AppRegistry, Button, StyleSheet, View} from "react-native";
 import DatePickerAndroid from "./src/DatePickerAndroid";
+import TimePickerAndroid from "./src/TimePickerAndroid";
 
-export default class CustomDatePicker extends Component {
+export default class ClearableDateTimePicker extends Component {
+
+    openDatePicker = () => {
+        DatePickerAndroid.open({
+            date: new Date()
+        }).then(({action, year, month, day}) => {
+            console.log('Date picker action: ', action);
+            if (action !== DatePickerAndroid.dismissedAction && action !== DatePickerAndroid.clearedAction) {
+                console.log(`${year}-${month}-${day}`);
+            }
+        }).catch((err) => {
+            console.log(err);
+        });
+    };
+
+    openTimePicker = () => {
+        TimePickerAndroid.open({
+            hourOfDay: 5,
+            minute: 7,
+            is24HourView: true
+        }).then(({action, hourOfDay, minute}) => {
+            console.log('Time picker action: ', action, ', hour: ', hourOfDay, ', minute: ', minute);
+        })
+    };
+
     render() {
         return (
             <View style={styles.container}>
                 <Button title="ShowDate" onPress={() => {
-                    DatePickerAndroid.open({
-                        date: new Date()
-                    }).then(({action, year, month, day}) => {
-                        if (action !== DatePickerAndroid.dismissedAction) {
-                            console.log(`${year}-${month}-${day}`);
-                        }
-                    }).catch((err) => {
-                        console.log(err);
-                    });
-
+                    this.openDatePicker();
+                }}/>
+                <Button title="ShowTime" onPress={() => {
+                    this.openTimePicker();
                 }}/>
             </View>
         );
@@ -48,4 +67,4 @@ const styles = StyleSheet.create({
     },
 });
 
-AppRegistry.registerComponent('CustomDatePicker', () => CustomDatePicker);
+AppRegistry.registerComponent('ClearableDateTimePicker', () => ClearableDateTimePicker);
