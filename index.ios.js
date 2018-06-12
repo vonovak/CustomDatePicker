@@ -1,47 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+'use strict';
 
-import React, { Component } from 'react';
+import React from 'react';
+
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  NotImplemented
 } from 'react-native';
-import ClearableDateTimePicker from './index.android';
 
-export default class ClearableDateTimePicker extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          iOS version is not implemented
-        </Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('ClearableDateTimePicker', () => ClearableDateTimePicker);
+export default NotImplemented;
