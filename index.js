@@ -1,4 +1,7 @@
-import ClearableDatePicker from './ClearableDatePicker';
-import ClearableTimePicker from './ClearableTimePicker';
+import ClearableDatePicker from './js/ClearableDatePicker';
+import ClearableTimePicker from './js/ClearableTimePicker';
 
-export {ClearableDatePicker, ClearableTimePicker};
+export default ClearableDateAndTimePicker = {
+    ClearableDatePicker,
+    ClearableTimePicker
+}

@@ -12,8 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Collections;
 
-
-public class CustomReactPackage implements ReactPackage {
+public class ClearableDateTimePickerPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Arrays.<NativeModule>asList(new DatePickerDialogModule(reactContext), new TimePickerDialogModule(reactContext));

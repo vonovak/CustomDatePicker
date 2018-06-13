@@ -9,8 +9,10 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+    NativeModules
 } from 'react-native';
+const {ClearableDatePicker, ClearableTimePicker} = NativeModules;
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,7 +25,27 @@ type Props = {
   x: string
 };
 
-export default class AppX extends Component<Props> {
+export default class MyApp extends Component<Props> {
+
+  componentDidMount() {
+      ClearableDatePicker.open({
+          hourOfDay: 3,
+          minute: 5,
+      }).then(({action, year, month, day}) => {
+          console.log('action: ', action, ', year: ', year, ', month: ', month, ', day: ', day);
+      });
+
+      ClearableTimePicker.open({
+          hourOfDay: 3,
+          minute: 5,
+          is24HourView: true
+      }).then(({action, hour, minute}) => {
+         console.log('action: ', action, ', hour: ', hour, ', minute: ', minute);
+      });
+  }
+
+
+
   render() {
     return (
       <View style={styles.container}>

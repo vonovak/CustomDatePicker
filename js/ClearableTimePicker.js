@@ -2,7 +2,7 @@
 
 import { NativeModules } from "react-native";
 
-class ClearableTimePicker {
+export default class ClearableTimePicker {
 
     static async open(options: Object): Promise<Object> {
         return NativeModules.ClearableTimePicker.open(options);
@@ -26,5 +26,3 @@ class ClearableTimePicker {
         return 'clearedAction';
     }
 }
-
-export { ClearableTimePicker };
