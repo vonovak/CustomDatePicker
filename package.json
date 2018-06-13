@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/sladek-jan/react-native-clearable-date-time-picker/issues"
   },
-  "homepage": "https://github.com/sladek-jan/react-native-clearable-date-time-picker"
+  "homepage": "https://github.com/sladek-jan/react-native-clearable-date-time-picker",
   "devDependencies": {
     "react": "^15.3.0",
     "react-native": "^0.30.0"
