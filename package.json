@@ -6,10 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:sladek-jan/react-native-clearable-date-time-picker.git"
-  },
   "keywords": [
     "React",
     "Native",
