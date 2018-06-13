@@ -59,7 +59,7 @@ public class TimePickerDialogModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "ClearableTimePickerAndroid";
+        return "ClearableTimePicker";
     }
 
     private class TimePickerDialogListener implements TimePickerDialog.OnTimeSetListener, OnDismissListener, OnClearClickedListener {

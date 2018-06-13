@@ -1,0 +1,5 @@
+rootProject.name = 'example'
+
+include ':app'
+include ':react-native-clearable-date-time-picker'
+project(':react-native-clearable-date-time-picker').projectDir = new File(rootProject.projectDir, '../../android')

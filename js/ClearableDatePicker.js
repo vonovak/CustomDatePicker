@@ -1,11 +1,11 @@
 'use strict';
 
-const ClearableDatePickerModule = require('react-native').NativeModules.ClearableDatePickerAndroid;
+import { NativeModules } from "react-native";
 
-class ClearableDatePickerAndroid {
+class ClearableDatePicker {
 
     static async open(options: Object): Promise<Object> {
-        return ClearableDatePickerModule.open(options);
+        return NativeModules.ClearableDatePicker.open(options);
     }
 
     /**
@@ -27,4 +27,4 @@ class ClearableDatePickerAndroid {
     }
 }
 
-module.exports = ClearableDatePickerAndroid;
+export { ClearableDatePicker };

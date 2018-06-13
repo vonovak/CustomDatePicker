@@ -1,4 +1,5 @@
 /**
+/**
  * Copyright (c) 2015-present, Facebook, Inc.
  * All rights reserved.
  * <p>
@@ -61,7 +62,7 @@ public class DatePickerDialogModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "ClearableDatePickerAndroid";
+        return "ClearableDatePicker";
     }
 
     private class DatePickerDialogListener implements OnDateSetListener, OnDismissListener, OnClearClickedListener {
