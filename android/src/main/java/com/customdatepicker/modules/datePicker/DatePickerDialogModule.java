@@ -29,7 +29,6 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.common.annotations.VisibleForTesting;
-import com.facebook.react.module.annotations.ReactModule;
 
 import javax.annotation.Nullable;
 

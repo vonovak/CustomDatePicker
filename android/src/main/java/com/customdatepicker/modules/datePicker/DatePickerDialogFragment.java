@@ -62,9 +62,9 @@ public class DatePickerDialogFragment extends DialogFragment {
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
 
-        com.facebook.react.modules.datepicker.DatePickerMode mode = com.facebook.react.modules.datepicker.DatePickerMode.DEFAULT;
+        DatePickerMode mode = DatePickerMode.DEFAULT;
         if (args != null && args.getString(DatePickerDialogModule.ARG_MODE, null) != null) {
-            mode = com.facebook.react.modules.datepicker.DatePickerMode.valueOf(args.getString(DatePickerDialogModule.ARG_MODE).toUpperCase(Locale.US));
+            mode = DatePickerMode.valueOf(args.getString(DatePickerDialogModule.ARG_MODE).toUpperCase(Locale.US));
         }
 
         DatePickerDialog dialog = null;

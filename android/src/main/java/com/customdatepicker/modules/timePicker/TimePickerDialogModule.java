@@ -16,7 +16,6 @@ import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TimePicker;
 
 import com.customdatepicker.OnClearClickedListener;
@@ -29,7 +28,6 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.common.annotations.VisibleForTesting;
-import com.facebook.react.module.annotations.ReactModule;
 
 import javax.annotation.Nullable;
 

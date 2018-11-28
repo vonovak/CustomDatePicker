@@ -17,7 +17,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnDismissListener;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.customdatepicker.OnClearClickedListener;
 
